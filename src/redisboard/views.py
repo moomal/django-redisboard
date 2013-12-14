@@ -96,7 +96,7 @@ def _get_db_details(server, db):
     key_details = {}
     if size > server.sampling_threshold:
         sampling = True
-        for _ in xrange(server.sampling_size):
+        for _ in range(server.sampling_size):
             key = conn.randomkey()
             key_details[key] = _get_key_info(conn, key)
     else:
