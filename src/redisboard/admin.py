@@ -33,7 +33,8 @@ class RedisServerAdmin(admin.ModelAdmin):
 
     def tools(self, obj):
         return '<a href="%s">%s</a>' % (
-            reverse("admin:redisboard_redisserver_inspect", args=(obj.id,)), "Inspect")
+            reverse("admin:redisboard_redisserver_inspect", args=(obj.id,)), 
+            _("Inspect")
         )
     tools.allow_tags = True
     tools.long_description = _("Tools")
