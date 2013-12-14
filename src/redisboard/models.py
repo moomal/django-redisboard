@@ -109,7 +109,7 @@ class RedisServer(models.Model):
                 'clients': info['connected_clients'],
                 'brief_details': SortedDict(
                     prettify(k, v)
-                    for k, v in sorted(info.items(), key=lambda k,v: k)
+                    for k, v in sorted(list(info.items()), key=lambda k: k)
                     if any(name.match(k) for name in REDISBOARD_DETAIL_FILTERS)
                 )
             }
