@@ -109,7 +109,7 @@ class RedisServer(models.Model):
                 'clients': info['connected_clients'],
                 'brief_details': SortedDict(
                     prettify(k, v)
-                    for k, v in sorted(info.items(), key=lambda (k,v): k)
+                    for k, v in sorted(info.items(), key=lambda k,v: k)
                     if any(name.match(k) for name in REDISBOARD_DETAIL_FILTERS)
                 )
             }
@@ -121,7 +121,7 @@ class RedisServer(models.Model):
                 'details': {},
                 'brief_details': {},
             }
-        except redis.exceptions.ResponseError, e:
+        except redis.exceptions.ResponseError as e:
             return {
                 'status': 'ERROR: %s' % e.args,
                 'clients': 'n/a',
