@@ -15,7 +15,7 @@ class RedisServerAdmin(admin.ModelAdmin):
             'all': ('redisboard/admin.css',)
         }
     list_display = (
-        '__unicode__', 'status', 'memory', 'clients', 'details', 'tools'
+        '__str__', 'status', 'memory', 'clients', 'details', 'tools'
     )
     list_filter = 'label', 'hostname'
     ordering = ('hostname', 'port')
