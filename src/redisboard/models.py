@@ -131,7 +131,7 @@ class RedisServer(models.Model):
             }
 
 
-    def __unicode__(self):
+    def __str__(self):
         if self.label:
             label = '%s (%%s)' % self.label
         else:
