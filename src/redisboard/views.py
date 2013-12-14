@@ -45,7 +45,7 @@ def _get_key_info(conn, key):
             'length': obj_length,
             'ttl': conn.ttl(key),
         }
-    except ResponseError, e:
+    except ResponseError as e:
         logger.exception("Failed to get details for key %r", key)
         return {
             'type': "n/a",
