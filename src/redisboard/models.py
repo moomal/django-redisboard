@@ -89,6 +89,7 @@ class RedisServer(models.Model):
             port = self.port,
             password = self.password,
             unix_socket_path=unix_socket_path,
+            decode_responses = True,
         )
 
     @connection.deleter
