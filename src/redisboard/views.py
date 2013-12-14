@@ -20,7 +20,7 @@ def safeint(value):
     except ValueError:
         return value
 
-def _fixup_pair((a, b)):
+def _fixup_pair(a, b):
     return a, safeint(b)
 
 LENGTH_GETTERS = {
