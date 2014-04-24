@@ -33,7 +33,7 @@ LENGTH_GETTERS = {
 
 def _get_key_info(conn, key):
     try:
-        details = conn.execute_command('OBJECT', key)
+        details = conn.execute_command('DEBUG', 'OBJECT', key)
         obj_type = conn.type(key)
         obj_length = LENGTH_GETTERS[obj_type](conn, key)
         return {
